@@ -28,4 +28,26 @@ function sum(a, b) {
 
 printSum(4000000);
 
+// array 
+var fibArray = [1]
+function printSum2(num) {
+  var evenArray = _.filter(fibSeq2(num), isEven)
+  var evensum = _.reduce(evenArray, sum);
+  console.log(evensum);
+}
+  
+function fibSeq2(num) {
+  var fibArray = [1, 2];
+  var sequenceNum = fibArray.length-1;
+  while (fibArray[sequenceNum] < num) {
+    fibArray.push(fibArray[sequenceNum-1] + fibArray[sequenceNum]);
+    sequenceNum ++;
+  }
+  return fibArray;
+}
+
+printSum2(4000000);
+
+
+
 
