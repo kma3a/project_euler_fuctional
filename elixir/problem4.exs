@@ -20,10 +20,7 @@ defmodule DigitMult do
   end
 
   def gen_nums(num1, num2, start_num) do
-    IO.puts num1
-    IO.puts num2
     product = num1 * num2
-    IO.puts product
     if Palendrome.check_pal(product) do
       product
     else
