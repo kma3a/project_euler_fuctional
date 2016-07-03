@@ -1,4 +1,16 @@
 
+function findSmallDiv(num) {
+  console.log(calculateDiv(num*num, num));
+}
+
+function calculateDiv(num, upLim) {
+  for(var i = num; num <= 100000000000; i+=upLim) {
+    if(isDivRange(i, upLim)) {
+      return i;
+    }
+  }
+}
+
 function isDivRange(num, upLim) {
   if ( upLim === 1) { return true; }
   if (isDiv(num, upLim)) {
@@ -12,4 +24,4 @@ function isDiv(num, div) {
   return num % div === 0;
 }
 
-console.log(isDivRange(60, 5));
+findSmallDiv(20);
