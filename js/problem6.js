@@ -1,3 +1,7 @@
+function squared(num) {
+  return Math.pow(num, 2);
+}
+
 //array
 
 var addIndexes = function(x, i) {
@@ -6,7 +10,7 @@ var addIndexes = function(x, i) {
 
 var squareIndexes = function(x, i) {
   i++;
-  return Math.pow(i, 2);
+  return squared(i);
 }
 
 var array = function(upperLimit, f) {
@@ -22,7 +26,7 @@ var sum = function(previous, current) {
 }
 
 var sumSquared = function(limit) {
-  return Math.pow(calcSum(array(limit,addIndexes)), 2);
+  return squared(calcSum(array(limit,addIndexes)));
 }
 
 var eachSquare = function(limit) {
@@ -41,8 +45,8 @@ function getDiffRe(limit) {
 }
 
 function generateDiff(limit, sumSquared, squaredSum) {
-  if(limit === 0 ){return Math.pow(sumSquared, 2) - squaredSum;}
-  numSquared = Math.pow(limit, 2);
+  if(limit === 0 ){return squared(sumSquared) - squaredSum;}
+  numSquared = squared(limit);
   return generateDiff(limit-1, sumSquared+limit, squaredSum+numSquared);
 }
   
