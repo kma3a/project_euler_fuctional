@@ -34,8 +34,22 @@ var getDiff = function(limit) {
 }
 
 
-
 //recursive
+
+function getDiffRe(limit) {
+  return generateDiff(limit, 0, 0);
+}
+
+function generateDiff(limit, sumSquared, squaredSum) {
+  if(limit === 0 ){return Math.pow(sumSquared, 2) - squaredSum;}
+  numSquared = Math.pow(limit, 2);
+  return generateDiff(limit-1, sumSquared+limit, squaredSum+numSquared);
+}
+  
+  
+
+
 
 
 console.log(getDiff(100));
+console.log(getDiffRe(100));
